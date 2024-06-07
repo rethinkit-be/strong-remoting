@@ -29,17 +29,14 @@
     "express": "4.x",
     "inflection": "^1.7.1",
     "jayson": "^2.0.5",
-    "js2xmlparser": "^3.0.0",
     "loopback-datatype-geopoint": "^1.0.0",
     "loopback-phase": "^3.1.0",
     "mux-demux": "^3.7.9",
     "qs": "^6.2.1",
-    "request": "^2.83.0",
     "sse": "0.0.8",
     "strong-error-handler": "^3.0.0",
     "strong-globalize": "^5.0.2",
-    "traverse": "^0.6.6",
-    "xml2js": "^0.4.8"
+    "traverse": "^0.6.6"
   },
   "devDependencies": {
     "bluebird": "^3.4.1",
