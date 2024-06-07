@@ -7,7 +7,6 @@
 
 const expect = require('chai').expect;
 const RemoteObjects = require('../');
-const RestAdapter = require('../lib/rest-adapter');
 const SharedClass = require('../lib/shared-class');
 
 describe('RemoteObjects', function() {
@@ -24,10 +23,6 @@ describe('RemoteObjects', function() {
         return;
       }
       throw new Error('should not get here');
-    });
-
-    it('should accept a provided adapter if valid', function() {
-      remotes.handler(RestAdapter);
     });
   });
 

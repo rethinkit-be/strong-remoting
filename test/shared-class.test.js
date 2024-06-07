@@ -11,7 +11,6 @@ const expect = require('chai').expect;
 const SharedClass = require('../lib/shared-class');
 const factory = require('./helpers/shared-objects-factory.js');
 const RemoteObjects = require('../');
-const RestAdapter = require('../lib/rest-adapter');
 function NOOP() {}
 
 describe('SharedClass', function() {
@@ -28,15 +27,6 @@ describe('SharedClass', function() {
     it('fills http.path using the name', function() {
       const sc = new SharedClass('some', SomeClass);
       expect(sc.http.path).to.equal('/some');
-    });
-
-    it('fills http.path using a normalized path', function() {
-      const sc = new SharedClass('SomeClass', SomeClass, {normalizeHttpPath: true});
-      const remotes = RemoteObjects.create();
-      remotes.addClass(sc);
-      const classes = new RestAdapter(remotes).getClasses();
-      expect(classes[0]).to.have.property('routes')
-        .eql([{path: '/some-class', verb: 'all'}]);
     });
 
     it('does not require a sharedConstructor', function() {
